@@ -79,14 +79,10 @@ module MyPriorityQueue
     end
 
     def balanced?(parent:, child:)
-      return true if parent.nil? || child.nil?
-
       ordered?(should_be_prior: parent, should_be_posterior: child)
     end
 
     def swap(node1_index, node2_index)
-      return false if node1_index.to_i <= 0 || node2_index.to_i <= 0
-
       node1 = nodes[node1_index]
       node2 = nodes[node2_index]
       nodes[node1_index] = node2
